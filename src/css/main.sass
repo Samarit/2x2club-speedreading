@@ -1,0 +1,91 @@
+@import 'modal.sass'
+@import 'navbar.sass'
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+:root
+  --fiolet: #5e4f90
+  --cyan: #67b1c2
+  --orange: #db634d
+  --black: #000
+  --dark-grey: #969695
+  --grey: #e4e5e4
+  --monochrome: #373736
+  --white: #fff
+  --yellow: #f9c956
+
+// Шрифт для основного контента страницы
+@font-face
+  font-family: Cormac-ExtraLight
+  src: url(/assets/fonts/Cormac-Extralight.ttf)
+
+// Шрифт для заголовков и нейминга
+@font-face
+  font-family: Amavick
+  src: url(/assets/fonts/Amavick.ttf)
+
+h1,h1,h2,h3,h4,h5,h6
+  font-family: Amavick
+
+html
+  font-family: Cormac-Extralight
+  font-size: 16px
+
+body
+  background-image: url('/assets/images/bg.png')
+
+#main
+  display: flex
+  justify-content: center
+  min-height: 568px
+  position: relative
+
+#about
+  background-color: var(--cyan)
+
+.card-container
+  .card-header
+    text-align: center
+
+.card
+  border-radius: 10px
+
+  .card-body
+
+  .card-icon
+    height: 5rem
+    width: 5rem
+    margin: 0 auto
+    background-image: url(/assets/images/green.png)
+
+  .card-content
+    font-size: 0.8rem
+
+.btn
+  border-radius: 20px
+
+.btn-primary
+  font-family: Amavick,
+  background-color: var(--yellow) !important,
+  color: var(--fiolet) !important
+  border-color: var(--yellow) !important
+
+  &:focus,
+  &:active
+    box-shadow: var(--cyan)
+
+#modalOpenBtn
+  position: absolute
+  bottom: 1rem
+
+#logo
+  img
+    width: 3em
+    height: 3em
+
+.navbar-phone
+  color: white
+  font-family: Amavick

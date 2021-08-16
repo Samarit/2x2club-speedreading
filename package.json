@@ -1,0 +1,47 @@
+{
+  "name": "2x2club-speedreading",
+  "version": "1.0.0",
+  "description": "Landing page for 2x2club's speedreading and mental arithmetic",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node app.js",
+    "server": "nodemon app.js",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"webpack serve --mode development\" ",
+    "build": "cross-env NODE_ENV=production webpack --mode production"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "webpack",
+    "bootstrap",
+    "express"
+  ],
+  "author": "Aleksey Kislyak <kislyakaleksey@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "imask": "^6.1.0",
+    "multer": "^1.4.3",
+    "nodemailer": "^6.6.3",
+    "nodemon": "^2.0.12",
+    "validate.js": "^0.13.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "postcss-loader": "^6.1.1",
+    "sass": "^1.37.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
