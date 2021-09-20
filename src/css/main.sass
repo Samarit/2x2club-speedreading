@@ -1,5 +1,6 @@
 @import 'modal.sass'
 @import 'navbar.sass'
+@import 'about.sass'
 
 *
   box-sizing: border-box
@@ -7,15 +8,22 @@
   padding: 0
 
 :root
-  --fiolet: #5e4f90
-  --cyan: #67b1c2
-  --orange: #db634d
-  --black: #000
-  --dark-grey: #969695
-  --grey: #e4e5e4
-  --monochrome: #373736
   --white: #fff
-  --yellow: #f9c956
+  --monochrome: #3f3f3e
+  --mid-blue: #a4d2e4
+  --mid-red: #f39988
+  --dark-grey: #b6b6b5
+  --grey: #e4e5e4
+  --mid-fiolet: #9d8bbd
+  --blue-2: #75bbd6
+  --yellow: #ffd047
+  --orange-2: #ec644a
+  --mid-yellow: #ffe086
+  --monochrome-2: #6b6b6b
+  --fiolet-2: #6a4f9b
+  --black: #000
+  --text-fiolet: #cbc3dd
+  --main-text-grey: #7c7c7b
 
 // Шрифт для основного контента страницы
 @font-face
@@ -27,48 +35,58 @@
   font-family: Amavick
   src: url(/assets/fonts/Amavick.ttf)
 
+@font-face
+  font-family: SF-Pro-Rounded-Heavy
+  src: url(/assets/fonts/SF-Pro-Rounded-Heavy.ttf)
+
 h1,h1,h2,h3,h4,h5,h6
-  font-family: Amavick
+  font-family: SF-Pro-Rounded-Heavy
 
 html
   font-family: Cormac-Extralight
   font-size: 16px
 
 body
-  background-image: url('/assets/images/bg.png')
 
 #main
   display: flex
+  flex-direction: column
   justify-content: center
   min-height: 568px
+  padding: 1.2em
   position: relative
+  background-color: var(--fiolet-2)
+  color: var(--white)
 
-#about
-  background-color: var(--cyan)
+  h2
+    color: var(--text-fiolet)
+    margin-top: 2em
 
-.card-container
-  .card-header
+  .signup-ref
+    position: absolute
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin-right: 1.2em
+    padding: 1.25em
+    bottom: -3.5em
+    border-radius: 15px
+    box-shadow: 0 3px 10px 4px rgba(0, 0, 0, 0.05)
+    background-color: white
+    color: var(--monochrome)
     text-align: center
 
-.card
-  border-radius: 10px
+    button
+      font-size: 0.85em
 
-  .card-body
-
-  .card-icon
-    height: 5rem
-    width: 5rem
-    margin: 0 auto
-    background-image: url(/assets/images/green.png)
-
-  .card-content
-    font-size: 0.8rem
+#about
+  background-color: white
 
 .btn
   border-radius: 20px
 
 .btn-primary
-  font-family: Amavick,
+  font-family: SF-Pro-Rounded-Heavy,
   background-color: var(--yellow) !important,
   color: var(--fiolet) !important
   border-color: var(--yellow) !important
