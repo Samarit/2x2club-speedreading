@@ -1,6 +1,8 @@
-@import 'modal.sass'
 @import 'navbar.sass'
 @import 'about.sass'
+
+$navbar-dark-color: red
+$navbar-dark-toggler-border-color: red
 
 *
   box-sizing: border-box
@@ -57,6 +59,8 @@ body
   position: relative
   background-color: var(--fiolet-2)
   color: var(--white)
+  background-image: url(/assets/images/main-bg.png)
+  background-size: 100%
 
   h2
     color: var(--text-fiolet)
@@ -67,6 +71,7 @@ body
     display: flex
     flex-direction: column
     justify-content: center
+    align-self: center
     margin-right: 1.2em
     padding: 1.25em
     bottom: -3.5em
@@ -90,14 +95,6 @@ body
   background-color: var(--yellow) !important,
   color: var(--fiolet) !important
   border-color: var(--yellow) !important
-
-  &:focus,
-  &:active
-    box-shadow: var(--cyan)
-
-#modalOpenBtn
-  position: absolute
-  bottom: 1rem
 
 #logo
   img
