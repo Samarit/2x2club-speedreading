@@ -1,13 +1,20 @@
 header
   .navbar
+    background-color: var(--header)
 
-  .navbar-dark
-    background-color: cyan
-    color: black
+  #logo
+  img
+    width: 3em
+    height: 3em
 
-  .navbar-toggler-icon
-    background-image: url('/assets/images/red.png') !important
+  .navbar-toggler
+
+    &:focus
+      box-shadow: 0 0 0 0.25rem white
+
+    .navbar-toggler-icon
+      background-image: url('/assets/images/hamburger-icon.svg') !important
 
   .nav-link
     text-align: center
-    color: black !important
+    color: white !important

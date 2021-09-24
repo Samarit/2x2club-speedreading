@@ -1,5 +1,5 @@
 @import 'navbar.sass'
-@import 'about.sass'
+@import 'mental.sass'
 
 $navbar-dark-color: red
 $navbar-dark-toggler-border-color: red
@@ -19,13 +19,14 @@ $navbar-dark-toggler-border-color: red
   --mid-fiolet: #9d8bbd
   --blue-2: #75bbd6
   --yellow: #ffd047
-  --orange-2: #ec644a
+  --orange: #ec644a
   --mid-yellow: #ffe086
   --monochrome-2: #6b6b6b
   --fiolet-2: #6a4f9b
   --black: #000
   --text-fiolet: #cbc3dd
   --main-text-grey: #7c7c7b
+  --header: #634899
 
 // Шрифт для основного контента страницы
 @font-face
@@ -41,8 +42,26 @@ $navbar-dark-toggler-border-color: red
   font-family: SF-Pro-Rounded-Heavy
   src: url(/assets/fonts/SF-Pro-Rounded-Heavy.ttf)
 
-h1,h1,h2,h3,h4,h5,h6
+@font-face
+  font-family: SF-Pro-Rounded-Regular
+  src: url(/assets/fonts/SF-Pro-Rounded-Regular.ttf)
+
+@font-face
+  font-family: SF-Pro-Rounded-Bold
+  src: url(/assets/fonts/SF-Pro-Rounded-Bold.ttf)
+
+@font-face
+  font-family: SF-Pro-Rounded-Semibold
+  src: url(/assets/fonts/SF-Pro-Rounded-Semibold.ttf)
+
+h1,h3,h4,h5,h6
   font-family: SF-Pro-Rounded-Heavy
+
+h2
+  font-family: SF-Pro-Rounded-Bold
+
+p
+  font-family: SF-Pro-Rounded-Semibold
 
 html
   font-family: Cormac-Extralight
@@ -54,13 +73,13 @@ body
   display: flex
   flex-direction: column
   justify-content: center
-  min-height: 568px
+  min-height: 560px
   padding: 1.2em
   position: relative
-  background-color: var(--fiolet-2)
-  color: var(--white)
+  background-color: var(--mid-fiolet)
+  color: white
   background-image: url(/assets/images/main-bg.png)
-  background-size: 100%
+  background-size: 230%
 
   h2
     color: var(--text-fiolet)
@@ -72,7 +91,7 @@ body
     flex-direction: column
     justify-content: center
     align-self: center
-    margin-right: 1.2em
+    margin: 0 1em
     padding: 1.25em
     bottom: -3.5em
     border-radius: 15px
@@ -95,12 +114,3 @@ body
   background-color: var(--yellow) !important,
   color: var(--fiolet) !important
   border-color: var(--yellow) !important
-
-#logo
-  img
-    width: 3em
-    height: 3em
-
-.navbar-phone
-  color: white
-  font-family: Amavick
