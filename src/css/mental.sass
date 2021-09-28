@@ -1,37 +1,33 @@
 #mental
-  padding: 1.25em
-  padding-top: 6.5em
-  text-align: center
+  .pros
+    text-align: start
 
-  .article
-    margin-bottom: 2.875em
+    li:not(:last-child)
+      margin-bottom: 0.9em
 
-    .article-header
-      color: var(--monochrome)
-      margin-bottom: 1em
+  .steps
+    li:not(:last-child)
+      margin-bottom: 1.5em
 
-    h2
-      margin-bottom: 1.25em
+    li:nth-child(1) .icon
+      background-color: var(--blue)
 
-    p
-      font-size: 1.25em
+    li:nth-child(2) .icon
+      background-color: var(--orange)
 
-    .article-body
-      font-family: SF-Pro-Rounded-Regular
-      font-size: 0.875em
-      color: var(--main-text-grey)
+    li:nth-child(3) .icon
+      background-color: var(--fiolet)
 
-  ul
-    list-style: none
-
+  .result
     li
-      text-align: start
+      &:nth-child(1) .icon
+        background-image: url('/assets/images/exam.svg')
 
-    &.pros
+      &:nth-child(2) .icon
+        background-image: url('/assets/images/math-love.svg')
 
-      li::before
-        display: inline-block
-        content: ''
-        width: 1em
-        height: 1em
-        background-image: url('/assets/images/accept.svg')
+      &:nth-child(3) .icon
+        background-image: url('/assets/images/hero.svg')
+
+      &:nth-child(4) .icon
+        background-image: url('/assets/images/books.svg')

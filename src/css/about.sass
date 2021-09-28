@@ -1,0 +1,117 @@
+@import 'mental.sass'
+
+#mental, #speedreading
+  padding: 1.25em
+  padding-top: 6.5em
+  text-align: center
+
+  .article
+    margin-bottom: 2.875em
+
+    .article-header
+      color: var(--monochrome)
+      margin-bottom: 1em
+      text-align: center
+
+    .article-body
+      span
+        font-size: 0.875em
+        font-family: SF-Pro-Rounded-Regular
+        color: var(--main-text-grey)
+
+      li>span
+        font-size: 0.75em
+
+  h2
+    margin-bottom: 1.25em
+
+  p
+    font-size: 1.25em
+
+  ul
+    list-style: none
+    margin-top: 1em
+    padding-left: 0
+
+    li
+      display: flex
+      align-items: center
+      text-align: start
+
+  .checkmark
+    width: 1em
+    height: 1em
+    margin-right: 1em
+    background-image: url('/assets/images/accept.svg')
+    background-size: cover
+    flex-shrink: 0
+
+  .steps
+    .icon
+      width: 1.5em
+      height: 1.5em
+      color: white
+      border-radius: 5px 0 5px 5px
+      font-family: Amavick
+      text-align: center
+      line-height: 1.5em
+      margin-right: 1.25em
+      flex-shrink: 0
+
+  .result
+    .article-body
+      li
+        width: 100%
+        height: 6.875em
+        padding: 1.25em
+        border-radius: 15px
+
+        span
+          color: black
+
+    li:not(:last-child)
+      margin-bottom: 1.25em
+
+    li:nth-child(1)
+      background-color: var(--mid-yellow)
+
+    li:nth-child(2)
+      background-color: var(--mid-blue)
+
+    li:nth-child(3)
+      background-color: var(--mid-red)
+
+    li:nth-child(4)
+      background-color: var(--mid-fiolet)
+
+    .icon
+      width: 2.5em
+      height: 3.125em
+      flex-shrink: 0
+      margin-right: 1.25em
+      background: center no-repeat
+
+.stats
+  background-color: var(--fiolet)
+
+  ul
+    display: flex
+    flex-direction: column
+    list-style: none
+    padding: 2.25em 1.25em
+    margin: 0 auto
+
+    li
+      display: flex
+      align-items: center
+
+      .value
+        font-family: Amavick
+        font-size: 2.5em
+        color: white
+        margin-right: 0.75rem
+
+      .text
+        font-family: SF-Pro-Rounded-Regular
+        font-size: 0.75em
+        color: var(--text-fiolet)

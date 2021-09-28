@@ -1,4 +1,4 @@
-import './css/main.sass'
+import './css/__init.sass'
 import IMask from 'imask'
 import formValidate from './js/formValidate'
 import validate from 'validate.js'
