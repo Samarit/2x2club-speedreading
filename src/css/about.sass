@@ -1,4 +1,5 @@
 @import 'mental.sass'
+@import 'speedreading.sass'
 
 #mental, #speedreading
   padding: 1.25em
@@ -46,7 +47,34 @@
     background-size: cover
     flex-shrink: 0
 
+  .pros
+    text-align: start
+
+    li:not(:last-child)
+      margin-bottom: 0.9em
+
   .steps
+    li:not(:last-child)
+      margin-bottom: 1.5em
+
+    li:nth-child(1) .icon
+      background-color: var(--blue)
+
+    li:nth-child(2) .icon
+      background-color: var(--orange)
+
+    li:nth-child(3) .icon
+      background-color: var(--fiolet)
+
+    li:nth-child(4) .icon
+      background-color: var(--yellow)
+
+    li:nth-child(5) .icon
+      background-color: var(--green)
+
+    li:nth-child(6) .icon
+      background-color: var(--pink)
+
     .icon
       width: 1.5em
       height: 1.5em

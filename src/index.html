@@ -164,7 +164,143 @@
 
   <section class="container-fluid" id="speedreading">
 
+    <article class="article">
+      <h2 class="article-header">Что такое cкорочтение?</h2>
+      <div class="article-body">
+        <span><b>Скорочтение</b> — это методика развития навыка быстрого усвоения текста, то есть выделение сути и смысла на повышенной скорости чтения.</span>
+      </div>
+    </article>
+
+    <article class="article">
+      <div class="article-image"></div>
+      <p class="article-header">Как скорочтение развивает ребёнка?</p>
+      <div class="article-body">
+        <span>Скорочтение дает больше, чем способность читать много книг и делать это быстрее в несколько раз. Эффективное чтение развивает ассоциативную память ребенка, фантазию и воображение, концентрацию и внимание, логическое мышление. Общая успеваемость детей зависит от скорости чтения.</span>
+      </div>
+    </article>
+
+    <article class="article pros">
+      <p class="article-header">На что нацелены занятия по скорочтению?</p>
+      <div class="article-image"></div>
+      <div class="article-body">
+        <span>Занятия по программе нацелены на развитие:</span>
+        <ul>
+          <li>
+            <div class="icon checkmark"></div>
+            <span>Создание условий для эффективного обучения быстрому чтению</span>
+          </li>
+          <li>
+            <div class="icon checkmark"></div>
+            <span>Повышению скорости чтения</span>
+          </li>
+          <li>
+            <div class="icon checkmark"></div>
+            <span>Формирование навыков быстрого и устойчивого восприятия большого объёма информации</span>
+          </li>
+          <li>
+            <div class="icon checkmark"></div>
+            <span>Развитие интеллектуальных и творческих способностей в их взаимосвязи друг с другом</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="article steps">
+      <p class="article-header">Какие задачи решает программа по скорочтению?</p>
+      <div class="article-body">
+        <ul>
+          <li>
+            <div class="icon">1</div>
+            <span>Устранение ошибок медленного чтения</span>
+          </li>
+          <li>
+            <div class="icon">2</div>
+            <span>Обучение детей скоростному и осмысленному чтению</span>
+          </li>
+          <li>
+            <div class="icon">3</div>
+            <span>Развитие зрительной и слуховой памяти</span>
+          </li>
+          <li>
+            <div class="icon">4</div>
+            <span>Развитие внимания, концентрации внимания</span>
+          </li>
+          <li>
+            <div class="icon">5</div>
+            <span>Улучшение разговорной речи</span>
+          </li>
+          <li>
+            <div class="icon">6</div>
+            <span>Освоение техник для чтения на повышенных скоростях</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="article result">
+      <p class="article-header">Какой результат получит Ваш ребёнок?</p>
+      <div class="article-body">
+        <ul>
+          <li>
+            <div class="icon"></div>
+            <span>Быстрое чтение развивает мышление ребенка во всех его видах и формах.</span>
+          </li>
+          <li>
+            <div class="icon"></div>
+            <span>Скорочтение позволяет улучшить не  только технику чтения, но и речь.</span>
+          </li>
+          <li>
+            <div class="icon"></div>
+            <span>Ваш ребёнок получит навыки развития внимания, памяти и воображения.</span>
+          </li>
+          <li>
+            <div class="icon"></div>
+            <span>Повысится успеваемость в школе благодаря высокой скорости изучения информации.</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
   </section>
+
+  <div class="signup">
+    <h2>Записаться на курс</h2>
+    <form
+      method="POST" 
+      action="/api/sendmail"
+      class="needs-validation"
+      id="signupForm"
+      novalidate>
+        <div class="radio">
+          <div class="input-group">
+            <span>Выбрать направление</span>
+
+            <input 
+              type="radio" 
+              name="course"
+              id="mental"
+              value="mental"
+              checked>
+            <label for="mental">Ментальная арифметика</label>
+
+            <input
+              type="radio"
+              name="course"
+              id="speedreading"
+              value="speedreading">
+            <label for="speedreading">Скорочтение</label>
+          </div>
+        </div>
+
+        <div class="textinput">
+          <div class="input-group">
+            <input type="email" name="email" id="inputEmail" placeholder="Email" required>
+          </div>
+          <div class="input-group"></div>
+          <div class="input-group"></div>
+        </div>
+    </form>
+  </div>
 
    <!-- Modal -->
    <div class="modal fade" id="modalContactUs" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
