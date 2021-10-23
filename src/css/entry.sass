@@ -23,6 +23,38 @@
   --header-color: #634899
   --mid-fiolet: #9d8bbd
 
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+html
+  font-size: 16px
+
+body
+  background-color: var(--fiolet)
+
+h1,h2,h3,h4,h6
+  font-family: SF-Pro-Rounded-Heavy
+
+h5
+  font-family: SF-Pro-Rounded-Regular
+
+p
+  font-family: SF-Pro-Rounded-Semibold
+
+.btn
+  border-radius: 25px
+
+.btn-primary
+  font-family: SF-Pro-Rounded-Heavy
+  font-size: 0.8rem
+  height: 2.8rem
+  width: 16.875rem
+  background-color: var(--yellow) !important
+  color: black !important
+  border-color: var(--yellow) !important
+
 // Шрифт для основного контента страницы
 @font-face
   font-family: Cormac-ExtraLight
@@ -48,20 +80,3 @@
 @font-face
   font-family: SF-Pro-Rounded-Semibold
   src: url(/assets/fonts/SF-Pro-Rounded-Semibold.ttf)
-
-h1,h3,h4,h5,h6
-  font-family: SF-Pro-Rounded-Heavy
-
-h2
-  font-family: SF-Pro-Rounded-Bold
-
-p
-  font-family: SF-Pro-Rounded-Semibold
-
-*
-  box-sizing: border-box
-  margin: 0
-  padding: 0
-
-html
-  font-size: 16px

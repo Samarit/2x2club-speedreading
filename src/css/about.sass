@@ -1,33 +1,41 @@
 @import 'mental.sass'
 @import 'speedreading.sass'
 
+#about
+  padding: 0.75rem
+
 #mental, #speedreading
-  padding: 1.25em
-  padding-top: 6.5em
+  padding: 0.9em
+  padding-top: 2em
   text-align: center
+  border-radius: 20px
+  background-color: white
 
   .article
     margin-bottom: 2.875em
 
+    h2
+      font-size: 1.5em
+      margin-bottom: 1em
+
     .article-header
-      color: var(--monochrome)
+      font-size: 1.25em
+      color: black
       margin-bottom: 1em
       text-align: center
 
     .article-body
-      span
-        font-size: 0.875em
-        font-family: SF-Pro-Rounded-Regular
-        color: var(--main-text-grey)
-
-      li>span
+      .text
         font-size: 0.75em
+        font-family: SF-Pro-Rounded-Regular
+        line-height: 1.25em
+        color: black
 
-  h2
-    margin-bottom: 1.25em
+        b
+          font-family: SF-Pro-Rounded-Bold
 
   p
-    font-size: 1.25em
+    font-size: 1em
 
   ul
     list-style: none
@@ -39,6 +47,30 @@
       align-items: center
       text-align: start
 
+    .value
+      font-size: 0.75em
+
+  .icons
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-around
+
+    li
+      flex-direction: column
+      width: 7em
+      margin-bottom: 1.75em
+
+      .icon
+        width: 5em
+        height: 5em
+        margin-bottom: 0.5em
+        background: no-repeat center
+        background-image: url('/assets/images/exam.svg')
+
+      .value
+        text-align: center
+
   .checkmark
     width: 1em
     height: 1em
@@ -48,7 +80,13 @@
     flex-shrink: 0
 
   .pros
+    margin: 0 -0.9em
+    color: white
     text-align: start
+    background-image: linear-gradient(to left, var(--fiolet), rgba(255, 255, 255, 0.1)), url('/assets/images/main-bg.png')
+
+    .article-header
+      color: white
 
     li:not(:last-child)
       margin-bottom: 0.9em
