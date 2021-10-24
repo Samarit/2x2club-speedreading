@@ -6,13 +6,12 @@
 
 #mental, #speedreading
   padding: 0.9em
-  padding-top: 2em
   text-align: center
   border-radius: 20px
   background-color: white
 
   .article
-    margin-bottom: 2.875em
+    padding-top: 2em
 
     h2
       font-size: 1.5em
@@ -50,7 +49,7 @@
     .value
       font-size: 0.75em
 
-  .icons
+  .circles
     display: flex
     flex-direction: row
     flex-wrap: wrap
@@ -61,7 +60,7 @@
       width: 7em
       margin-bottom: 1.75em
 
-      .icon
+      .circle
         width: 5em
         height: 5em
         margin-bottom: 0.5em
@@ -81,6 +80,7 @@
 
   .pros
     margin: 0 -0.9em
+    padding: 2.5em 1em
     color: white
     text-align: start
     background-image: linear-gradient(to left, var(--fiolet), rgba(255, 255, 255, 0.1)), url('/assets/images/main-bg.png')
@@ -92,37 +92,46 @@
       margin-bottom: 0.9em
 
   .steps
-    li:not(:last-child)
-      margin-bottom: 1.5em
+    .article-body
+      display: flex
 
-    li:nth-child(1) .icon
-      background-color: var(--blue)
+    ul
+      margin-top: 0
+      position: relative
 
-    li:nth-child(2) .icon
-      background-color: var(--orange)
+      .icon
+        width: 1.25em
+        height: 1.25em
+        color: white
+        border-radius: 5px 0 5px 5px
+        font-family: Amavick
+        font-size: 2em
+        text-align: center
+        line-height: 1.25em
+        margin-right: 0.65em
+        flex-shrink: 0
+        z-index: 10
 
-    li:nth-child(3) .icon
-      background-color: var(--fiolet)
+      .icon-band
+        position: absolute
+        background-image: linear-gradient(to bottom, var(--blue), var(--yellow) 50%, var(--orange))
+        width: 4px
+        height: 120px
+        left: 18px
+        top: 40px
+        z-index: 0
 
-    li:nth-child(4) .icon
-      background-color: var(--yellow)
+      li:nth-child(1) .icon
+        background-color: var(--blue)
 
-    li:nth-child(5) .icon
-      background-color: var(--green)
+      li:nth-child(2) .icon
+        background-color: var(--yellow)
 
-    li:nth-child(6) .icon
-      background-color: var(--pink)
+      li:nth-child(3) .icon
+        background-color: var(--orange)
 
-    .icon
-      width: 1.5em
-      height: 1.5em
-      color: white
-      border-radius: 5px 0 5px 5px
-      font-family: Amavick
-      text-align: center
-      line-height: 1.5em
-      margin-right: 1.25em
-      flex-shrink: 0
+      li:not(:last-child)
+        margin-bottom: 2em
 
   .result
     .article-body
@@ -157,27 +166,21 @@
       margin-right: 1.25em
       background: center no-repeat
 
-.stats
-  background-color: var(--fiolet)
+.chance
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  padding: 1.25em 1em 1.8em
 
-  ul
-    display: flex
-    flex-direction: column
-    list-style: none
-    padding: 2.25em 1.25em
-    margin: 0 auto
+  h4
+    text-align: center
+    font-family: SF-Pro-Rounded-Bold
+    color: white
 
-    li
-      display: flex
-      align-items: center
-
-      .value
-        font-family: Amavick
-        font-size: 2.5em
-        color: white
-        margin-right: 0.75rem
-
-      .text
-        font-family: SF-Pro-Rounded-Regular
-        font-size: 0.75em
-        color: var(--text-fiolet)
+  div
+    font-family: SF-Pro-Rounded-Regular
+    font-size: 0.875em
+    line-height: 1em
+    text-align: center
+    color: var(--light-fiolet)
+    margin-bottom: 1rem
