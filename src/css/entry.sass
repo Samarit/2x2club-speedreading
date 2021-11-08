@@ -1,6 +1,9 @@
 @import 'main.sass'
-@import 'navbar.sass'
+@import 'header.sass'
 @import 'about.sass'
+@import 'forms.sass'
+@import 'footer.sass'
+@import 'fonts.sass'
 
 :root
   --black: #000
@@ -14,6 +17,7 @@
   --mid-fiolet: #9d8bbd
   --white: #fff
   --pink: #e6539e
+  --mid-pink: #ef8ebf
   --fiolet: #6a4f9b
   --mid-yellow: #ffe086
   --monochrome: #3f3f3e
@@ -37,49 +41,15 @@ html
 body
   background-color: var(--fiolet)
 
-h1,h2,h3,h4,h6
-  font-family: SF-Pro-Rounded-Heavy
-
-h5
-  font-family: SF-Pro-Rounded-Regular
-
-p
-  font-family: SF-Pro-Rounded-Semibold
-
-.btn
-  border-radius: 25px
-
 .btn-primary
-  font-family: SF-Pro-Rounded-Heavy
   font-size: 0.8rem
   height: 2.8rem
   width: 16.875rem
   background-color: var(--yellow) !important
   color: black !important
+  border-radius: 25px
   border-color: var(--yellow) !important
 
-// Шрифт для основного контента страницы
-@font-face
-  font-family: Cormac-ExtraLight
-  src: url(/assets/fonts/Cormac-Extralight.ttf)
-
-// Шрифт для заголовков и нейминга
-@font-face
-  font-family: Amavick
-  src: url(/assets/fonts/Amavick.ttf)
-
-@font-face
-  font-family: SF-Pro-Rounded-Heavy
-  src: url(/assets/fonts/SF-Pro-Rounded-Heavy.ttf)
-
-@font-face
-  font-family: SF-Pro-Rounded-Regular
-  src: url(/assets/fonts/SF-Pro-Rounded-Regular.ttf)
-
-@font-face
-  font-family: SF-Pro-Rounded-Bold
-  src: url(/assets/fonts/SF-Pro-Rounded-Bold.ttf)
-
-@font-face
-  font-family: SF-Pro-Rounded-Semibold
-  src: url(/assets/fonts/SF-Pro-Rounded-Semibold.ttf)
+@media screen and ( min-width: 1024px )
+  html
+    font-size: 20px

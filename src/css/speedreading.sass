@@ -1,14 +1,84 @@
 #speedreading
+  .pluses
+    li:nth-child(1) .icon
+      background-color: var(--light-blue)
+      background-image: url(/assets/icons/faces/thinking.svg)
+
+    li:nth-child(2) .icon
+      background-color: var(--light-yellow)
+      background-image: url(/assets/icons/faces/mind.svg)
+
+    li:nth-child(3) .icon
+      background-color: var(--light-fiolet)
+      background-image: url(/assets/icons/faces/puzzle.svg)
+
+    li:nth-child(4) .icon
+      background-color: var(--light-orange)
+      background-image: url(/assets/icons/faces/geometry.svg)
+
+    li:nth-child(5) .icon
+      background-color: var(--light-pink)
+      background-image: url(/assets/icons/faces/learner.svg)
+
+  .targets
+    background-color: var(--pink)
+
+  .steps
+    .icon
+      font-size: 1.25em
+      width: 1.875rem
+      height: 1.875rem
+      line-height: 1.875rem
+      color: white
+      border-radius: 7px 3px 7px 7px
+      font-family: Amavick
+      text-align: center
+      margin-right: 0.65em
+      flex-shrink: 0
+
+    li:nth-child(1) .icon
+      background-color: var(--fiolet)
+
+    li:nth-child(2) .icon
+      background-color: var(--blue)
+
+    li:nth-child(3) .icon
+      background-color: var(--yellow)
+
+    li:nth-child(4) .icon
+      background-color: var(--green)
+
+    li:nth-child(5) .icon
+      background-color: var(--orange)
+
+    li:nth-child(6) .icon
+      background-color: var(--pink)
+
+    li:not(:last-child)
+      margin-bottom: 2em
+
   .result
     li
-      &:nth-child(1) .icon
-        background-image: url('/assets/images/brain-puzzle.svg')
+      &:nth-child(1)
+        background-color: var(--mid-blue)
 
-      &:nth-child(2) .icon
-        background-image: url('/assets/images/talks.svg')
+        .icon
+          background-image: url('/assets/icons/brain.svg')
 
-      &:nth-child(3) .icon
-        background-image: url('/assets/images/boywithbook.svg')
+      &:nth-child(2)
+        background-color: var(--mid-fiolet)
 
-      &:nth-child(4) .icon
-        background-image: url('/assets/images/books.svg')
+        .icon
+          background-image: url('/assets/icons/talks_colored.svg')
+
+      &:nth-child(3)
+        background-color: var(--mid-yellow)
+
+        .icon
+          background-image: url('/assets/icons/hero.svg')
+
+      &:nth-child(4)
+        background-color: var(--mid-orange)
+
+        .icon
+          background-image: url('/assets/icons/books_colored.svg')

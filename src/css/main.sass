@@ -4,17 +4,27 @@
   justify-content: center
   min-height: 560px
   padding: 1.5625rem
-  background-color: white
   color: white
-  background-image: url(/assets/images/main-bg.png)
-  background-size: 230%
+  background: no-repeat
+  background-size: 225%
+  background-position: 65% 4rem
+  background-image: url(/assets/images/bg_main.jpg)
 
-  h1
-    font-size: 1.875em
+  .wrapper
+    max-width: 620px
 
-  h5
-    color: #cbc3dd
-    margin-bottom: 3.75em
+    h1
+      font-size: 1.875em
 
-  .btn
-    align-self: center
+    h2
+      color: #cbc3dd
+      margin-bottom: 3.75em
+
+    .btn
+      align-self: center
+
+@media screen and ( min-width: 978px )
+  #main
+    padding: 4.5em
+    background-size: 100%
+    background-position: center
