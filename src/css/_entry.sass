@@ -1,0 +1,47 @@
+@use '_variables' as var
+@use 'main.sass'
+@use 'header.sass'
+@use 'about.sass'
+@use 'forms.sass'
+@use 'footer.sass'
+@use 'fonts.sass'
+
+$container-max-width: 954px
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+html
+  font-size: 16px
+  scroll-behavior: smooth
+
+body
+  background-color: var.$fiolet
+
+.btn
+  background-color: var.$yellow !important
+  color: black !important
+  border: none
+  border-radius: 25px
+
+.btn-primary
+  width: 270px
+  height: 45px
+  font-size: 14px
+  padding: 14px
+  @include var.screen (desktop)
+    width: 400px
+    height: 55px
+    font-size: 21px
+
+.btn-secondary
+  width: 100px
+  height: 30px
+  font-size: 12px
+  padding: 0.75em
+  @include var.screen (desktop)
+    width: 170px
+    height: 35px
+    font-size: 14px

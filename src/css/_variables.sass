@@ -1,0 +1,32 @@
+//Dimensions
+$header-height: 70px
+
+//Colors  
+$mid-blue: #a4d2e4
+$white: #fff
+$fiolet: #6a4f9b
+$monochrome: #3f3f3e
+$black: #000
+$mid-yellow: #ffe086
+$pink: #e6539e
+$light-fiolet: #cec5de
+$light-blue: #d2e9f2
+$mid-fiolet: #9d8bbd
+$green: #59a954
+$blue: #75bbd6
+$light-yellow: #fff0c2
+$light-pink: #f7c6df
+$mid-pink: #ef8ebf
+$orange: #ec644a
+$light-orange: #f9ccc3
+$light-grey: #bdbdbd
+$mid-orange: #f39988
+$yellow: #ffd047
+$extralight-fiolet: #e9e5f0
+
+//Media query mixins
+@mixin screen ($breakpoint)
+
+  @if $breakpoint == desktop
+    @media (min-width: 1024px)
+      @content

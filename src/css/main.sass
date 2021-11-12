@@ -1,7 +1,9 @@
+@use '_variables' as var
+
 #main
   display: flex
-  flex-direction: column
   justify-content: center
+  align-items: center
   min-height: 560px
   padding: 1.5625rem
   color: white
@@ -9,22 +11,29 @@
   background-size: 225%
   background-position: 65% 4rem
   background-image: url(/assets/images/bg_main.jpg)
+  @include var.screen (desktop)
+    padding: 4.5em
+    background-size: 100%
+    background-position: center
 
   .wrapper
-    max-width: 620px
+    display: flex
+    flex-direction: column
+    max-width: 924px
 
     h1
       font-size: 1.875em
 
     h2
-      color: #cbc3dd
+      color: var.$extralight-fiolet
       margin-bottom: 3.75em
 
     .btn
-      align-self: center
-
-@media screen and ( min-width: 978px )
-  #main
-    padding: 4.5em
-    background-size: 100%
-    background-position: center
+      width: 290px
+      height: 45px
+      font-size: 14px
+      padding: 14px
+      @include var.screen (desktop)
+        width: 480px
+        height: 55px
+        font-size: 21px

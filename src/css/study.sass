@@ -1,45 +1,47 @@
+@use '_variables' as var
+
 #study
   .result
     color: black
 
     li:nth-child(1)
-      background-color: var(--mid-yellow)
+      background-color: var.$mid-yellow
       .icon
         background-image: url(/assets/icons/target.png)
 
     li:nth-child(2)
-      background-color: var(--mid-blue)
+      background-color: var.$mid-blue
       .icon
         background-image: url(/assets/icons/survey.png)
 
     li:nth-child(3)
-      background-color: var(--light-pink)
+      background-color: var.$light-pink
       .icon
         background-image: url(/assets/icons/mail.png)
 
     li:nth-child(4)
-      background-color: var(--mid-orange)
+      background-color: var.$mid-orange
       .icon
         background-image: url(/assets/icons/calendar.png)
 
     li:nth-child(5)
-      background-color: var(--mid-fiolet)
+      background-color: var.$mid-fiolet
       .icon
         background-image: url(/assets/icons/chat.png)
 
   .pluses
     li:nth-child(1) .icon
-      background-color: var(--light-fiolet)
+      background-color: var.$light-fiolet
       background-image: url(/assets/icons/laptop.svg)
 
     li:nth-child(2) .icon
-      background-color: var(--light-blue)
+      background-color: var.$light-blue
       background-image: url(/assets/icons/web.svg)
 
     li:nth-child(3) .icon
-      background-color: var(--light-yellow)
+      background-color: var.$light-yellow
       background-image: url(/assets/icons/pen_and_paper.svg)
 
     li:nth-child(4) .icon
-      background-color: var(--light-orange)
+      background-color: var.$light-orange
       background-image: url(/assets/icons/abacus.svg)

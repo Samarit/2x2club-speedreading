@@ -1,27 +1,28 @@
+@use '_variables' as var
+
 #speedreading
   .pluses
     li:nth-child(1) .icon
-      background-color: var(--light-blue)
+      background-color: var.$light-blue
       background-image: url(/assets/icons/faces/thinking.svg)
 
     li:nth-child(2) .icon
-      background-color: var(--light-yellow)
+      background-color: var.$light-yellow
       background-image: url(/assets/icons/faces/mind.svg)
 
     li:nth-child(3) .icon
-      background-color: var(--light-fiolet)
-      background-image: url(/assets/icons/faces/puzzle.svg)
+      background-color: var.$light-fiolet
 
     li:nth-child(4) .icon
-      background-color: var(--light-orange)
+      background-color: var.$light-orange
       background-image: url(/assets/icons/faces/geometry.svg)
 
     li:nth-child(5) .icon
-      background-color: var(--light-pink)
+      background-color: var.$light-pink
       background-image: url(/assets/icons/faces/learner.svg)
 
   .targets
-    background-color: var(--pink)
+    background-color: var.$pink
 
   .steps
     .icon
@@ -31,28 +32,27 @@
       line-height: 1.875rem
       color: white
       border-radius: 7px 3px 7px 7px
-      font-family: Amavick
       text-align: center
       margin-right: 0.65em
       flex-shrink: 0
 
     li:nth-child(1) .icon
-      background-color: var(--fiolet)
+      background-color: var.$fiolet
 
     li:nth-child(2) .icon
-      background-color: var(--blue)
+      background-color: var.$blue
 
     li:nth-child(3) .icon
-      background-color: var(--yellow)
+      background-color: var.$yellow
 
     li:nth-child(4) .icon
-      background-color: var(--green)
+      background-color: var.$green
 
     li:nth-child(5) .icon
-      background-color: var(--orange)
+      background-color: var.$orange
 
     li:nth-child(6) .icon
-      background-color: var(--pink)
+      background-color: var.$pink
 
     li:not(:last-child)
       margin-bottom: 2em
@@ -60,25 +60,24 @@
   .result
     li
       &:nth-child(1)
-        background-color: var(--mid-blue)
+        background-color: var.$mid-blue
 
         .icon
           background-image: url('/assets/icons/brain.svg')
 
       &:nth-child(2)
-        background-color: var(--mid-fiolet)
+        background-color: var.$mid-fiolet
 
         .icon
           background-image: url('/assets/icons/talks_colored.svg')
 
       &:nth-child(3)
-        background-color: var(--mid-yellow)
-
+        background-color: var.$mid-yellow
         .icon
           background-image: url('/assets/icons/hero.svg')
 
       &:nth-child(4)
-        background-color: var(--mid-orange)
+        background-color: var.$mid-orange
 
         .icon
           background-image: url('/assets/icons/books_colored.svg')

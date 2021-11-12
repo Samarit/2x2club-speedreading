@@ -4,51 +4,38 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Document</title>
 </head>
 <body>
 
-  <header class="fixed-top">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <div id="logo">
-          <img src="/assets/images/logo-cube.svg" />
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#mental">Ментальная арифметика</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#speedreading">Скорочтение</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#prices">Цены</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contacts">Контакты</a>
-            </li>
-          </ul>
-        </div>
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="#" id="logo"></a>
+      <ul class="navbar-menu">
+        <li class="navbar-item"><a href="#mental" class="navbar-link">Ментальная арифметика</a></li>
+        <li class="navbar-item"><a href="#speedreading" class="navbar-link">Скорочтение</a></li>
+        <li class="navbar-item"><a href="#price" class="navbar-link">Цены</a></li>
+        <li class="navbar-item"><a href="#contacts" class="navbar-link">Контакты</a></li>
+      </ul>
+      <div class="navbar-phone-signup">
+        <div class="navbar-phone">+7 (000) 000-00-00</div>
+        <button class="btn btn-secondary navbar-signup">Записаться</button>
       </div>
+      <button id="navbar-toggler"></button>
     </nav>
   </header>
-
-  <div class="container-fluid" id="main">
+  
+  <div id="main">
     <div class="wrapper">
       <h1 class="title">Онлайн обучение детей ментальной арифметике и скорочтению!</h1>
       <h2>Индивидуальные онлайн курсы для детей от 5 лет</h2>
-      <button class="btn btn-primary" id="signup-main-btn">Записаться на бесплатный урок</button>
+      <button class="btn btn-main" id="signup-main-btn">Записаться на бесплатный урок</button>
     </div>
   </div>
 
 
   <div id="about">
-    <section class="container-fluid" id="mental">
+    <section id="mental">
 
       <article class="article">
         <h2 class="section-header">Что такое ментальная арифметика?</h2>
@@ -169,7 +156,7 @@
       <button class="btn btn-primary">Записаться</button>
     </div>
 
-    <section class="container-fluid" id="speedreading">
+    <section id="speedreading">
 
       <article class="article">
         <h2 class="section-header">Что такое cкорочтение?</h2>
@@ -291,7 +278,75 @@
 
     </section>
 
-    <section class="container-fluid" id="study">
+    <div class="form signup">
+      <h2 class="form-header">Записаться на курс</h2>
+      <form
+        method="POST" 
+        action="/api/sendmail"
+        class="needs-validation"
+        id="formSignup">
+
+        <div class="radio">
+              <div class="radio-title">Выбрать направление:</div>
+  
+              <div class="input-wrapper">
+                <label>
+                  <input 
+                    type="radio" 
+                    name="course"
+                    id="mental"
+                    value="mental"
+                    checked>
+                    Ментальная арифметика
+                  </input>
+                </label>
+              </div>
+  
+              <div class="input-wrapper">
+                <label>
+                  <input
+                   type="radio"
+                   name="course"
+                   id="speedreading">
+                  Скорочтение
+                </label>
+              </div>
+        </div>
+  
+        <div class="input-area">
+            <div class="input-group">
+              <input 
+                type="email"
+                name="email"
+                id="inputEmail" 
+                placeholder="Email" 
+                required>
+            </div>
+            <div class="input-group">
+              <input 
+                type="text"
+                name="name"
+                id="inputName"
+                placeholder="Имя"
+                required>
+            </div>
+            <div class="input-group">
+              <input 
+                type="phone" 
+                name="phone" 
+                id="inputPhone"
+                placeholder="Телефон"
+                required>
+            </div>
+            <button type="submit" class="btn btn-primary">Записаться</button>
+        </div>
+      </form>
+      <div class="form-footer">Нажимая на кнопку Вы соглашаетесь на обработку персональных данных.</br>
+        <span>Соглашение об обработке персональных данных.</span>
+      </div>
+    </div>
+
+    <section id="study">
 
       <article class="article result">
         <h2 class="section-header">Как проходит обучение?</h2>
@@ -357,7 +412,7 @@
       </article>
     </section>
 
-    <section class="container-fluid" id="reason">
+    <section id="reason">
       <article class="article result">
         <h2 class="section-header">Почему стоит выбрать Дважды два?</h2>
         <div class="article-body">
@@ -413,69 +468,52 @@
         </div>
       </article>
     </section>
-  </div>
-  
-  
-  <div class="form signup">
-    <h2 class="section-header">Записаться на курс</h2>
-    <form
-      method="POST" 
-      action="/api/sendmail"
-      class="needs-validation"
-      id="formSignup">
-        <div class="radio">
-          <div class="input-group">
-            <span>Выбрать направление:</span>
 
-            <div class="input-wrapper">
+    <div class="form questions">
+      <h2 class="form-header">Есть вопросы?</h2>
+      <form
+        method="POST" 
+        action="/api/sendmail"
+        class="needs-validation"
+        id="formQuestions">
+
+        <div class="questions-text">Мы с радостью ответим на них!</br>
+          Заполните простую форму и отправьте нам, 
+          чтобы мы могли связаться с Вами.
+        </div>
+  
+        <div class="input-area">
+            <div class="input-group">
               <input 
-                type="radio" 
-                name="course"
-                id="mental"
-                value="mental"
-                checked>
-              <label for="mental">Ментальная арифметика</label>
+                type="email"
+                name="email"
+                id="inputEmail" 
+                placeholder="Email" 
+                required>
             </div>
-
-            <div class="input-wrapper">
-              <input
-              type="radio"
-              name="course"
-              id="speedreading"
-              value="speedreading">
-            <label for="speedreading">Скорочтение</label>
+            <div class="input-group">
+              <input 
+                type="text"
+                name="name"
+                id="inputName"
+                placeholder="Имя"
+                required>
             </div>
-          </div>
+            <div class="input-group">
+              <input 
+                type="phone" 
+                name="phone" 
+                id="inputPhone"
+                placeholder="Телефон"
+                required>
+            </div>
+            <button type="submit" class="btn btn-primary">Записаться</button>
         </div>
-
-        <div class="textinput">
-          <div class="input-group">
-            <input 
-              type="email"
-              name="email"
-              id="inputEmail" 
-              placeholder="Email" 
-              required>
-          </div>
-          <div class="input-group">
-            <input 
-              type="text"
-              name="name"
-              id="inputName"
-              placeholder="Имя"
-              required>
-          </div>
-          <div class="input-group">
-            <input 
-              type="phone" 
-              name="phone" 
-              id="inputPhone"
-              required>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Записаться</button>
-    </form>
+      </form>
+      <div class="form-footer">Нажимая на кнопку Вы соглашаетесь на обработку персональных данных.</br>
+        <span>Соглашение об обработке персональных данных.</span>
+      </div>
+    </div>
   </div>
 
   <footer>
@@ -521,6 +559,5 @@
       </div>
     </div>
   </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

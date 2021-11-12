@@ -1,30 +1,136 @@
+@use '_variables' as var
+
+$nav-item-height: 60px
+$animation-speed: 310ms
+
+@mixin visibility()
+  opacity: 1
+  visibility: visible
+
+@mixin navDropdownAnimate($act)
+  animation: $act $animation-speed ease-out
+
 header
+  position: fixed
+  background-color: var.$fiolet
+  width: 100%
+  height: var.$header-height
+  display: flex
+  color: white
+  z-index: 100
 
   .navbar
-    background-color: var(--fiolet)
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+    width: 100%
+    @include var.screen (desktop)
+      justify-content: start
 
-    .navbar-collapse
-      background-color: var(--fiolet)
+    // Dropdown animation classes
+    &.opening
+      .navbar-menu
+        @include visibility()
+        @include navDropdownAnimate(show)
 
-  #logo
-    img
-      width: 3em
-      height: 3em
+    &.closing
+      .navbar-menu
+        @include visibility()
+        @include navDropdownAnimate(hide)
 
-  .navbar-toggler
-    &:focus
-      box-shadow: 0 0 0 0.25rem white
+    &.opened
+      .navbar-menu
+        @include visibility()
 
-    .navbar-toggler-icon
-      background-image: url('/assets/icons/hamburger.svg') !important
+    #logo
+      display: block
+      width: 60px
+      height: 60px
+      background-image: url('/assets/images/logo_header.svg')
+      margin-left: 10px
 
-  .nav-item
-    justify-content: center
+    .navbar-menu
+      display: flex
+      flex-direction: column
+      align-items: center
+      position: fixed
+      top: var.$header-height
+      left: 0
+      width: 100%
+      visibility: hidden
+      overflow-y: hidden
+      border-top: 1px solid var.$light-fiolet
+      background-color: var.$fiolet
+      @include var.screen (desktop)
+        position: static
+        flex-direction: row
+        border: none
+        visibility: visible
+        width: auto
 
-  .nav-link
-    text-align: center
-    color: white !important
+      .navbar-item
+        display: flex
+        justify-content: center
+        height: $nav-item-height
+        overflow-y: hidden
+        width: max-content
+        @include var.screen (desktop)
+          border: none
+          width: auto
 
-@media screen and ( min-width: 978px )
-  header
-    font-size: 14px
+        &:not(:last-child)
+          border-bottom: 1px solid var.$light-fiolet
+          @include var.screen (desktop)
+            border-bottom: none
+
+      .navbar-link
+        list-style-type: none
+        margin: 0
+        padding: 12px
+        text-decoration: none
+        color: white
+
+    .navbar-phone-signup
+      display: flex
+      justify-content: center
+      position: relative
+      left: -10px
+      @include var.screen (desktop)
+        position: static
+        margin-left: auto
+
+      .navbar-phone
+        display: flex
+        align-items: center
+
+      .navbar-signup
+        display: none
+        @include var.screen (desktop)
+          display: block
+          margin: 0 28px
+
+    #navbar-toggler
+      width: 30px
+      height: 30px
+      margin-right: 20px
+      background-size: contain
+      background-image: url('/assets/icons/hamburger.svg')
+      background-color: transparent
+      background-repeat: no-repeat
+      background-position: center
+      border: none
+      @include var.screen (desktop)
+        display: none
+
+@keyframes show
+  0%
+    height: 0
+  100%
+    height: $nav-item-height * 4
+
+@keyframes hide
+  0%
+    height: $nav-item-height * 4
+  100%
+    height: 0

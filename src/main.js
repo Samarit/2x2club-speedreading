@@ -1,4 +1,5 @@
-import './css/entry.sass'
+import './css/_entry.sass'
+import './js/navbar'
 import IMask from 'imask'
 import formValidate from './js/formValidate'
 import validate from 'validate.js'
@@ -7,6 +8,7 @@ const modalForm = document.getElementById('modalForm')
 const inputName = document.getElementById('inputName')
 const inputEmail = document.getElementById('inputEmail')
 const inputPhone = document.getElementById('inputPhone')
+
 
 //let maskPhoneOptions = {
 //  mask: '+{7}(000)000-00-00',

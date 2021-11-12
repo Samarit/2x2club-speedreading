@@ -1,3 +1,5 @@
+@use '_variables' as var
+
 .form
   display: flex
   flex-direction: column
@@ -5,38 +7,43 @@
   padding: 1.25em 1em 1.8em
   color: white
 
-  .section-header
+  .form-header
+    font-family: ProximaSoft-ExtraBold
     text-align: center
-    margin-bottom: 1em
+    margin-bottom: 0.8em
+
+  form
+    @include var.screen (desktop)
+      display: flex
+      justify-content: space-around
 
   .radio
     font-family: ProximaSoft-Medium
     font-size: 0.875em
     line-height: 1em
-    color: var(--light-fiolet)
+    color: var.$light-fiolet
     margin-bottom: 1em
 
-    .input-group
-      display: flex
-      flex-direction: column
+    .radio-title
+      margin-bottom: 1em
 
-      span
-        margin-bottom: 1em
+    .input-wrapper
+      margin-bottom: 1em
 
-      .input-wrapper
+      label
         display: flex
-        margin-bottom: 1em
 
         input[type='radio']
           display: grid
           place-content: center
-          appearance: none
+          appearance: none //hide default radiobox
           width: 20px
           height: 20px
           margin-right: 1em
-          border: solid 3px var(--yellow)
+          border: solid 3px var.$yellow
           border-radius: 50%
 
+          // checked radio
           &::before
             content: ""
             width: 10px
@@ -44,7 +51,58 @@
             border-radius: 50%
             transform: scale(0)
             transition: 120ms transform ease-in-out
-            box-shadow: inset 1em 1em var(--yellow)
+            box-shadow: inset 1em 1em var.$yellow
+            background-color: var.$yellow
 
           &:checked::before
             transform: scale(1)
+
+  .input-area
+    @include var.screen (desktop)
+      min-width: 400px
+
+    input
+      width: 100%
+      height: 40px
+      font-family: ProximaSoft-Regular
+      font-size: 0.75em
+      margin-bottom: 20px
+      padding-left: 22px
+      border-radius: 20px
+      border: solid 2px white
+      outline: none
+      @include var.screen (desktop)
+      font-size: 17px
+        margin-bottom: 25px
+        height: 50px
+
+      &:hover
+        border: solid 2px var.$yellow
+
+      &:focus-visible,
+      &:focus
+        border: solid 2px var.$blue
+
+    .btn
+      width: 100%
+
+  .form-footer
+    font-size: 0.75em
+    font-family: ProximaSoft-Medium
+    text-align: center
+    margin-top: 1.2em
+    @include var.screen (desktop)
+      font-size: 1em
+
+    span
+      color: var.$yellow
+
+.form.questions
+  .questions-text
+    margin-bottom: 23px
+    font-size: 14px
+    font-family: ProximaSoft-Medium
+    color: var.$extralight-fiolet
+    @include var.screen (desktop)
+      font-size: 21px
+      margin-right: 36px
