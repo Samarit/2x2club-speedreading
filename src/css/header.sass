@@ -1,17 +1,10 @@
 @use '_variables' as var
 
 $nav-item-height: 60px
-$animation-speed: 310ms
-
-@mixin visibility()
-  opacity: 1
-  visibility: visible
-
-@mixin navDropdownAnimate($act)
-  animation: $act $animation-speed ease-out
 
 header
   position: fixed
+  top: 0
   background-color: var.$fiolet
   width: 100%
   height: var.$header-height
@@ -28,20 +21,10 @@ header
     @include var.screen (desktop)
       justify-content: start
 
-    // Dropdown animation classes
-    &.opening
-      .navbar-menu
-        @include visibility()
-        @include navDropdownAnimate(show)
-
-    &.closing
-      .navbar-menu
-        @include visibility()
-        @include navDropdownAnimate(hide)
-
     &.opened
       .navbar-menu
-        @include visibility()
+        visibility: visible
+        opacity: 1
 
     #logo
       display: block
@@ -122,15 +105,3 @@ header
       border: none
       @include var.screen (desktop)
         display: none
-
-@keyframes show
-  0%
-    height: 0
-  100%
-    height: $nav-item-height * 4
-
-@keyframes hide
-  0%
-    height: $nav-item-height * 4
-  100%
-    height: 0
