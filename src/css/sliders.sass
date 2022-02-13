@@ -1,0 +1,287 @@
+@use '_variables' as var
+@use 'sass:math' as math
+
+// Show all (n) elements of slider 
+@mixin showAll($n)
+  flex: 0 0 math.div( 100%, $n )
+  max-width: math.div( 100%, $n )
+
+.slider
+  margin: 0 auto
+
+  .slider__control
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    @include var.screen (desktop)
+      display: none // Turn off control buttons at desktop
+
+  .slider__items
+    .slider__item
+      display: flex
+      justify-content: center
+      @include var.screen (desktop)
+        @include showAll(4)
+
+      &:last-child
+        @include var.screen (desktop)
+          transform: translateX(0) !important
+
+.teachers
+  .article-body
+    width: 100%
+
+  .slider__items
+    align-items: start
+    @include var.screen (desktop)
+      transform: translateX(0) !important
+
+  .slider__item
+    @include var.screen (desktop)
+      @include showAll(4)
+
+    .teacher
+      background-repeat: no-repeat
+      background-size: contain
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      max-width: 80%
+      font-size: 0.8em
+      @include var.screen (desktop)
+        font-size: 1em
+
+      img
+        object-position: center
+        width: 190px
+        height: 295px
+        @include var.screen (desktop)
+
+    p
+      margin-top: 10px
+
+.reviews
+  color: white
+  margin: 0 auto
+  max-width: var.$content-max-width-mobile
+  @include var.screen (desktop)
+    max-width: var.$content-max-width-desktop
+
+  .slider__indicators
+    position: static
+    margin-top: 1em
+    @include var.screen (desktop)
+      display: none
+
+    li
+      width: 10px
+      height: 10px
+      background-color: transparent
+      border: solid 1px var.$yellow
+      border-radius: 50%
+      margin-right: 10px
+
+      &.active
+        background-color: var.$yellow
+
+  .slider__items
+    @include var.screen (desktop)
+      transform: translateX(0) !important // Off sliders transition
+
+    .slider__item
+      flex-basis: 50% // Shows 2 slider items at once (100% / 2)
+      max-width: 50% // Same
+      @include var.screen (desktop)
+        // Rerender slider as full list w/o controls
+        flex-basis: 25% // 100% / 4
+        max-width: 25% // Same
+
+    .review
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      width: 9em
+      height: 12.8em
+      background-color: var.$mid-fiolet
+      margin: 0 5px
+      padding: 15px 10px
+      border-radius: 15px 5px 15px 15px
+      @include var.screen (desktop)
+        width: 12.5em
+        height: 14.375em
+        padding: 15px 20px
+
+      .text
+        font-size: 0.625em
+        @include var.screen (desktop)
+          font-size: 0.75em
+
+        &::before
+          content: ",,"
+          display: block
+          width: 33px
+          height: 33px
+          font-size: 60px
+          font-weight: bold
+          transform: rotate(180deg)
+          position: relative
+          top: 5px
+          left: -5px
+          @include var.screen (desktop)
+            font-size: 72px
+            width: 37px
+            height: 37px
+            top: 8px
+
+      p
+        font-size: 0.75em
+        text-align: end
+        @include var.screen (desktop)
+          font-size: 0.875em
+
+.tickets
+  overflow: hidden
+
+  .section-header
+    color: white
+
+  .slider__container
+    overflow: visible
+    width: 11.25em
+    margin: 0 auto
+    @include var.screen (desktop)
+      width: 59em
+
+    .slider__items
+      display: flex
+      align-items: center
+      height: 280px
+      @include var.screen (desktop)
+        height: 380px
+        transform: translateX(0) !important
+        justify-content: center
+
+      .slider__item
+        flex-basis: 100%
+        max-width: 200%
+        transform: translateX(0) !important
+        @include var.screen (desktop)
+          @include showAll($n: 4)
+          max-width: 15.375em
+
+        &:first-child .ticket
+          border-top-left-radius: 10px
+          border-bottom-left-radius: 10px
+
+        &:last-child .ticket
+          border-top-right-radius: 10px
+          border-bottom-right-radius: 10px
+
+    .ticket
+      width: 11.25em
+      height: 16.25em
+      padding: 1em 1.25em 1.25em
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
+      background-color: white
+      transition: height 500ms ease-out, width 500ms ease-out
+      @include var.screen (desktop)
+        width: 14.75em
+        height: 21.5625em
+
+      &:hover
+        background-color: var.$light-orange
+
+      .text
+        @include var.screen (desktop)
+          font-size: 0.825em
+
+      p
+        font-size: 0.875em
+        color: var.$fiolet
+
+      .price-per
+        font-family: ProximaSoft-ExtraBold
+        font-size: 34px
+        font-weight: 800
+        color: var.$fiolet
+
+        &:after
+          display: block
+          content: 'руб/занятие'
+          font-family: ProximaSoft-Regular
+          font-size: 10px
+          color: black
+          text-align: center
+
+      ul
+        border-bottom: solid 1px black
+
+        li
+          margin-bottom: 0.75em
+
+        .checkmark
+          background-image: url('/assets/icons/accept_fiolet.svg')
+
+      .price-total
+        .text
+          text-align: center
+          line-height: 2em
+
+          strong
+            font-size: 1.35em
+
+    .slider__item_active
+      .ticket
+        height: 17em
+        background-color: var.$orange
+        transition: height 500ms ease, width 500ms ease, border-radius 500ms ease, font-size 500ms ease
+        border-radius: 10px
+        @include var.screen (desktop)
+          width: 14.75em
+          height: 21.5625em
+          background-color: white
+          border-radius: 0px
+
+          &:hover
+            width: 15.375em
+            height: 23.4375em
+            background-color: var.$orange
+            border-radius: 10px
+
+            p
+              color: white
+
+            .price-per
+              color: white
+              font-size: 44px
+
+            ul
+              li
+                .checkmark
+                  background-image: url('/assets/icons/accept_white.svg')
+
+        p
+          color: white
+          @include var.screen (desktop)
+            font-size: 1.1em
+            color: var.$fiolet
+
+        .price-per
+          color: white
+          font-size: 38px
+          @include var.screen (desktop)
+            color: var.$fiolet
+
+        ul
+          border-bottom: solid 1px white
+          @include var.screen (desktop)
+            border-bottom: solid 1px black
+
+          .checkmark
+            background-image: url('/assets/icons/accept_white.svg')
+            @include var.screen (desktop)
+              background-image: url('/assets/icons/accept_fiolet.svg')

@@ -3,8 +3,10 @@
 @use 'header.sass'
 @use 'about.sass'
 @use 'forms.sass'
+@use 'sliders.sass'
 @use 'footer.sass'
 @use 'fonts.sass'
+@use 'modal.sass'
 
 $container-max-width: 954px
 
@@ -16,15 +18,23 @@ $container-max-width: 954px
 html
   font-size: 16px
   scroll-behavior: smooth
+  scroll-padding-top: var.$header-height
 
 body
   background-color: var.$fiolet
+
+a
+  list-style-type: none
+  text-decoration: none
+  text-align: center
 
 .btn
   background-color: var.$yellow !important
   color: black !important
   border: none
   border-radius: 25px
+  @include var.screen (desktop)
+    border-radius: 27.5px
 
 .btn-primary
   width: 270px

@@ -11,14 +11,20 @@ app.listen(port, () => {
 })
 
 
-
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
-app.post('/api/sendmail', upload.none(), (req, res) => {
-  let {name, email, phone} = req.body
-  sendMail(name, email, phone)
-  console.log(name, email, phone)
+
+app.post('/api/sendmail', upload.none(), async (req, res) => {
+
+  let {name, email, phone, course} = req.body
+
+  let status = await sendMail(name, email, phone, course)
+
+  console.log(name, email, phone, course)
   console.log(req.method, req.body, req.headers['content-type'])
-  res.send(`<h1>name: ${req.body.name}</br>email: ${req.body.email}</br>phone: ${req.body.phone}</h1>`)
+  console.log(`status: ${status}`)
+
+  res.status(404).send(status)
+
 })

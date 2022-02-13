@@ -5,12 +5,11 @@
 @use '_variables' as var
 
 #about
-  max-width: 550px
+  max-width: var.$content-max-width-mobile
   margin: 0 auto
   padding: 0.75em
-
-  @media (min-width: 1024px)
-    max-width: 954px
+  @include var.screen (desktop)
+    max-width: var.$content-max-width-desktop
 
 section
   padding: 0.9em
@@ -18,31 +17,42 @@ section
   color: black
   border-radius: 20px
   background-color: white
+  @include var.screen (desktop)
+    padding: 3.8em
+    border-radius: 25px
 
-  .section-header
-    font-size: 1.5em
-    margin-bottom: 1em
+.section-header
+  font-size: 1.5em
+  margin-bottom: 1em
+  text-align: center
+  @include var.screen (desktop)
+    font-size: 2.5em
 
 .article
   display: flex
   flex-direction: column
   align-items: center
   margin: 0 auto
-  padding-top: 2em
 
-  .section-header
-    font-size: 1.5em
-    margin-bottom: 1em
+  &:not(:last-child)
+    margin-bottom: 2.5em
 
   .article-header
     font-size: 1.25em
     margin-bottom: 1em
     text-align: center
+    @include var.screen (desktop)
+      font-size: 1.8em
 
   .article-body
-    .text
-      font-size: 0.75em
-      line-height: 1.25em
+    max-width: 100%
+    width: 100%
+
+.text
+  font-size: 0.75em
+  line-height: 1.25em
+  @include var.screen (desktop)
+    font-size: 1em
 
 p
   font-size: 1em
@@ -56,16 +66,16 @@ ul
     align-items: center
     text-align: start
 
-  .value
-    font-size: 0.75em
-
 .pluses
   ul
     max-width: 330px
+    margin: 0 auto
     display: flex
     flex-direction: row
     flex-wrap: wrap
     justify-content: space-around
+    @include var.screen (desktop)
+      max-width: none
 
     li
       flex-direction: column
@@ -79,6 +89,10 @@ ul
         border-radius: 50%
         background: no-repeat center
         background-size: 35%
+        @include var.screen (desktop)
+          width: 7.5em
+          height: 7.5em
+          margin-bottom: 0.825em
 
       .text
         text-align: center
@@ -95,9 +109,13 @@ ul
   padding: 1em
   border-radius: 20px
   color: white
+  @include var.screen (desktop)
+    padding: 2em 2.5em
 
   li:not(:last-child)
-    margin-bottom: 0.9em
+    margin-bottom: 0.75em
+    @include var.screen (desktop)
+      margin-bottom: 0.9em
 
 .steps
   .article-body
@@ -108,15 +126,25 @@ ul
     position: relative
 
 .result
-  .article-body
+  ul
+    margin: 0 auto
+    @include var.screen (desktop)
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+
     li
-      max-width: 390px
-      height: 6.875em
+      width: 100%
+      height: 110px
       padding: 1.25em
       border-radius: 15px 5px 15px 15px
+      margin: 0 auto
+      @include var.screen (desktop)
+        height: 150px
+        padding: 1.875em
 
-  li:not(:last-child)
-    margin-bottom: 1.25em
+      &:not(:last-child)
+        margin-bottom: 1.25em
 
   .icon
     width: 2.5em
@@ -125,3 +153,24 @@ ul
     margin-right: 1.25em
     background: center no-repeat
     background-size: contain
+
+.chance
+  color: white
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+  padding: 25px 0
+  max-width: 720px
+  margin: 0 auto
+
+  .section-header
+    margin-bottom: 0.6em
+
+  .chance-text
+    font-family: ProximaSoft-Medium
+    font-size: 0.95em
+    color: var.$extralight-fiolet
+    margin-bottom: 1em
+    @include var.screen (desktop)
+      font-size: 1.25em

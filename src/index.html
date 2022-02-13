@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="chief-slider-with-prefixes.min.css">
   <title>Document</title>
 </head>
 <body>
@@ -14,14 +15,14 @@
       <ul class="navbar-menu">
         <li class="navbar-item"><a href="#mental" class="navbar-link">Ментальная арифметика</a></li>
         <li class="navbar-item"><a href="#speedreading" class="navbar-link">Скорочтение</a></li>
-        <li class="navbar-item"><a href="#price" class="navbar-link">Цены</a></li>
+        <li class="navbar-item"><a href="#tickets" class="navbar-link">Цены</a></li>
         <li class="navbar-item"><a href="#contacts" class="navbar-link">Контакты</a></li>
       </ul>
       <div class="navbar-phone-signup">
         <div class="navbar-phone">+7 (000) 000-00-00</div>
-        <button class="btn btn-secondary navbar-signup">Записаться</button>
+        <a href="#form-container" class="btn btn-secondary navbar-signup">Записаться</a>
       </div>
-      <button id="navbar-toggler"></button>
+      <a id="navbar-toggler"></a>
     </nav>
   </header>
   
@@ -29,7 +30,7 @@
     <div class="wrapper">
       <h1 class="title">Онлайн обучение детей ментальной арифметике и скорочтению!</h1>
       <h2>Индивидуальные онлайн курсы для детей от 5 лет</h2>
-      <button class="btn btn-main" id="signup-main-btn">Записаться на бесплатный урок</button>
+      <a class="btn btn-main" id="signup-main-btn" href="#form-container">Записаться на бесплатный урок</a>
     </div>
   </div>
 
@@ -75,27 +76,27 @@
           <ul>
             <li>
               <div class="icon checkmark"></div>
-              <div class="value">Концентрации внимания</div>
+              <div class="text">Концентрации внимания</div>
             </li>
             <li>
               <div class="icon checkmark"></div>
-              <div class="value">Памяти</div>
+              <div class="text">Памяти</div>
             </li>
             <li>
               <div class="icon checkmark"></div>
-              <div class="value">Скорости и качества мышления</div>
+              <div class="text">Скорости и качества мышления</div>
             </li>
             <li>
               <div class="icon checkmark"></div>
-              <div class="value">Мелкой моторики рук</div>
+              <div class="text">Мелкой моторики рук</div>
             </li>
             <li>
               <div class="icon checkmark"></div>
-              <div class="value">На синхронную работу двух рук</div>
+              <div class="text">На синхронную работу двух рук</div>
             </li>
             <li>
               <div class="icon checkmark"></div>
-              <div class="value">На формирование устойчивого навыка быстрого счёта</div>
+              <div class="text">На формирование устойчивого навыка быстрого счёта</div>
             </li>
           </ul>
         </div>
@@ -148,12 +149,12 @@
     </section>
 
     <div class="chance">
-      <h3>Не упустите шанс!</h3>
-      <div>При покупке абонемента в течении 24 часов 
+      <div class="section-header">Не упустите шанс!</div>
+      <div class="chance-text">При покупке абонемента в течении 24 часов 
         после пробоного урока,  мы дарим Вам 
         2 бесплатных занятия!
       </div>
-      <button class="btn btn-primary">Записаться</button>
+      <a class="btn btn-primary" href="#form-container">Записаться</a>
     </div>
 
     <section id="speedreading">
@@ -278,7 +279,7 @@
 
     </section>
 
-    <div class="form signup">
+    <div class="form-container signup">
       <h2 class="form-header">Записаться на курс</h2>
       <form
         method="POST" 
@@ -295,7 +296,7 @@
                     type="radio" 
                     name="course"
                     id="mental"
-                    value="mental"
+                    text="mental"
                     checked>
                     Ментальная арифметика
                   </input>
@@ -404,10 +405,49 @@
         </div>
       </article>
 
-      <article class="article">
+      <article class="article teachers">
         <h4 class="article-header">Наши преподаватели</h4>
         <div class="article-body">
+          <div class="slider">
+            <div class="slider__container">
+              <div class="slider__wrapper">
+                <div class="slider__items">
 
+                  <div class="slider__item">
+                    <div class="teacher">
+                      <img src="/assets/images/teacher_1.jpg">
+                      <p>Олеся Радиславовна </br>Калачникова</p>
+                    </div>
+                  </div>
+
+                  <div class="slider__item">
+                    <div class="teacher">
+                      <img src="/assets/images/teacher_2.jpg" >
+                      <p>Юлия Валерьевна </br>Шлыкова</p>
+                    </div>
+                  </div>
+
+                  <div class="slider__item">
+                    <div class="teacher">
+                      <img src="/assets/images/teacher_3.jpg" >
+                      <p>Карина Владимировна </br>Еганова</p>
+                    </div>
+                  </div>
+
+                  <div class="slider__item">
+                    <div class="teacher">
+                      <img src="/assets/images/teacher_4.jpg" >
+                      <p>Нина Викторовна </br>Пимкина</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- Кнопки для перехода к предыдущему и следующему слайду -->
+            <a href="#" class="slider__control" data-slide="prev"></a>
+            <a href="#" class="slider__control" data-slide="next"></a>
+          </div>
         </div>
       </article>
     </section>
@@ -459,7 +499,7 @@
               <div class="text">
                 <p>Возврат налога</p>
                 <span>
-                  Дважды Два - это лиценищированныйцентр. Это означает,
+                  Дважды Два - это лицензированныйцентр. Это означает,
                   что Вы сможете возвращать подоходный налог.
                 </span>
               </div>
@@ -469,12 +509,12 @@
       </article>
     </section>
 
-    <div class="form questions">
+    <div class="form-container questions">
       <h2 class="form-header">Есть вопросы?</h2>
       <form
         method="POST" 
         action="/api/sendmail"
-        class="needs-validation"
+        class=" needs-validation"
         id="formQuestions">
 
         <div class="questions-text">Мы с радостью ответим на них!</br>
@@ -513,6 +553,161 @@
       <div class="form-footer">Нажимая на кнопку Вы соглашаетесь на обработку персональных данных.</br>
         <span>Соглашение об обработке персональных данных.</span>
       </div>
+    </div>
+  </div>
+
+  <div class="tickets" id="tickets">
+    <h2 class="section-header">Выбрать план обучения</h2>
+    <div class="slider slider-tickets">
+      <div class="slider__container">
+        <div class="slider__wrapper">
+          <div class="slider__items">
+            <div class="slider__item">
+              <div class="ticket">
+                <p>Базовый курс</p>
+                <div class="price-per">1200</div>
+                <ul>
+                  <li>
+                    <div class="icon checkmark"></div>
+                    <div class="text">4 занятия</div>
+                  </li>
+                  <li>
+                    <div class="icon checkmark"></div>
+                    <div class="text">45 минут занятие</div>
+                  </li>
+                </ul>
+                <div class="price-total">
+                  <div class="text">Стоимость курса:</br><strong>4800</strong> руб</div>
+                </div>
+                <a class="btn btn-secondary" href="#form-container">Выбрать</a>
+              </div>
+            </div>
+
+            <div class="slider__item">
+              <div class="ticket">
+                <p>Оптимальный курс</p>
+                <div class="price-per">1000</div>
+                <ul>
+                  <li>
+                    <div class="icon checkmark"></div>
+                    <div class="text">4 занятия</div>
+                  </li>
+                  <li>
+                    <div class="icon checkmark"></div>
+                    <div class="text">45 минут занятие</div>
+                  </li>
+                </ul>
+                <div class="price-total">
+                  <div class="text">Стоимость курса:</br><strong>8000</strong> руб</div>
+                </div>
+                <a class="btn btn-secondary" href="#form-container">Выбрать</a>
+              </div>
+            </div>
+
+            <div class="slider__item">
+              <div class="ticket">
+                <p>Расширенный курс</p>
+                <div class="price-per">900</div>
+                <ul>
+                  <li>
+                    <div class="icon checkmark"></div>
+                    <div class="text">16 занятий</div>
+                  </li>
+                  <li>
+                    <div class="icon checkmark"></div>
+                    <div class="text">45 минут занятие</div>
+                  </li>
+                </ul>
+                <div class="price-total">
+                  <div class="text">Стоимость курса:</br><strong>14400</strong> руб</div>
+                </div>
+                <a class="btn btn-secondary" href="#form-container">Выбрать</a>
+              </div>
+            </div>
+
+            <div class="slider__item">
+              <div class="ticket">
+                <p>Углубленный курс</p>
+                <div class="price-per">800</div>
+                <ul>
+                  <li>
+                    <div class="icon checkmark"></div>
+                    <div class="text">24 занятия</div>
+                  </li>
+                  <li>
+                    <div class="icon checkmark"></div>
+                    <div class="text">45 минут занятие</div>
+                  </li>
+                </ul>
+                <div class="price-total">
+                  <div class="text">Стоимость курса:</br><strong>19200</strong> руб</div>
+                </div>
+                <a class="btn btn-secondary" href="#form-container">Выбрать</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Кнопки для перехода к предыдущему и следующему слайду -->
+      <a href="#" class="slider__control" data-slide="prev"></a>
+      <a href="#" class="slider__control" data-slide="next"></a>
+    </div>
+  </div>
+
+  <div class="reviews">
+    <h2 class="section-header">Отзывы</h2>
+    <div class="slider">
+      <div class="slider__container">
+        <div class="slider__wrapper">
+          <div class="slider__items">
+            <div class="slider__item">
+              <div class="review">
+                <div class="text">Довольна тем, что моя внучка 
+                  посещает этот центр.
+                  Поверьте, есть с чем сравнить.
+                  Рекомендую всем.
+                </div>
+                <p>Галина Касимова</p>
+              </div>
+            </div>
+            <div class="slider__item">
+              <div class="review">
+                <div class="text">Ходим заниматься туда с открытия. 
+                  Хорошие педагоги,интересные занятия для детей. 
+                  Есть мини-сад. 
+                  Всегда оповещают смс о стоимости и расписании.
+                </div>
+                <p>Мария Канищева</p>
+              </div>
+            </div>
+            <div class="slider__item">
+              <div class="review">
+                <div class="text">Творческий подход к развитию каждого ребенка. 
+                  Посещаем уже более 3 лет
+                </div>
+                <p>Юлия Гок</p>
+              </div>
+            </div>
+            <div class="slider__item">
+              <div class="review">
+                <div class="text">Мы ходим в садик в этом центре. 
+                  Ребёнок идёт с удовольствием, всегда занятия интересные. 
+                  Обстановка как дома, отношение педагогов не нравоучительное, 
+                  а дружеское. Очень нравится!
+                </div>
+                <p>Надежда</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <ol class="slider__indicators">
+        <li data-slide-to="0"></li>
+        <li data-slide-to="1"></li>
+        <li data-slide-to="2"></li>
+        <li data-slide-to="3"></li>
+      </ol>
     </div>
   </div>
 
@@ -559,5 +754,140 @@
       </div>
     </div>
   </footer>
+
+  <div class="modal" id="modal">
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal-container">
+        
+        <div class="form-container form-course" id="modalCourse">
+
+          <div class="form-header">
+            <h2>Записаться на курс</h2>
+            <span>Наш специалист свяжется с вами и ответит на любые ваши вопросы</span>
+          </div>
+
+          <form
+            method="POST" 
+            action="/api/sendmail"
+            class="needs-validation"
+            id="formSignup">
+
+            <div class="radio">
+                  <div class="radio-title">Выбрать направление:</div>
+      
+                  <div class="input-wrapper">
+                    <label>
+                      <input 
+                        type="radio" 
+                        name="course"
+                        value="mental"
+                        id="mental"
+                        text="mental"
+                        checked>
+                        Ментальная арифметика
+                      </input>
+                    </label>
+                  </div>
+      
+                  <div class="input-wrapper">
+                    <label>
+                      <input
+                       type="radio"
+                       name="course"
+                       value="speedreading"
+                       id="speedreading">
+                      Скорочтение
+                    </label>
+                  </div>
+            </div>
+      
+            <div class="input-area">
+                <div class="input-group">
+                  <input 
+                    type="email"
+                    name="email"
+                    id="inputEmail" 
+                    placeholder="Email" 
+                    required>
+                </div>
+                <div class="input-group">
+                  <input 
+                    type="text"
+                    name="name"
+                    id="inputName"
+                    placeholder="Имя"
+                    required>
+                </div>
+                <div class="input-group">
+                  <input 
+                    type="phone" 
+                    name="phone" 
+                    id="inputPhone"
+                    placeholder="Телефон"
+                    required>
+                </div>
+                <button type="submit" class="btn btn-primary">Записаться</button>
+            </div>
+          </form>
+          <div class="form-footer">Нажимая на кнопку Вы соглашаетесь на обработку персональных данных.</br>
+            <span>Соглашение об обработке персональных данных.</span>
+          </div>
+        </div>
+
+        <div class="form-container form-lesson" id="modalLesson">
+          
+          <div class="form-header">
+            <h2>Записаться на бесплатный урок</h2>
+            <span>Наш специалист свяжется с вами и ответит на любые ваши вопросы</span>
+          </div>
+
+          <form
+            method="POST" 
+            action="/api/sendmail"
+            class="needs-validation"
+            id="formSignup">
+      
+            <div class="input-area">
+                <div class="input-group">
+                  <input 
+                    type="email"
+                    name="email"
+                    id="inputEmail" 
+                    placeholder="Email" 
+                    required>
+                </div>
+                <div class="input-group">
+                  <input 
+                    type="text"
+                    name="name"
+                    id="inputName"
+                    placeholder="Имя"
+                    required>
+                </div>
+                <div class="input-group">
+                  <input 
+                    type="phone" 
+                    name="phone" 
+                    id="inputPhone"
+                    placeholder="Телефон"
+                    required>
+                </div>
+                <button type="submit" class="btn btn-primary">Записаться</button>
+            </div>
+          </form>
+          <div class="form-footer">Нажимая на кнопку Вы соглашаетесь на обработку персональных данных.</br>
+            <span>Соглашение об обработке персональных данных.</span>
+          </div>
+        </div>
+
+        <div class="form-container form-result" id="modalSuccess">SUCC ASS</div>
+
+        <div class="form-container form-result" id="modalError">ERR</div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="chief-slider.min.js"></script>
 </body>
 </html>

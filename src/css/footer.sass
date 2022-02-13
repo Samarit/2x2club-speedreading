@@ -1,3 +1,5 @@
+@use '_variables' as var
+
 footer
   display: flex
   flex-direction: column
@@ -5,11 +7,14 @@ footer
   align-items: center
   padding: 2em
   color: white
-  font-size: 0.625em //(10px)
+  @include var.screen (desktop)
+    flex-direction: row
+    justify-content: space-between
 
   .footer-logo
-    width: 100%
-    height: 9em
+    width: 280px
+    height: 90px
+    margin-bottom: 1.5em
     background-position: center
     background-repeat: no-repeat
     background-size: contain
@@ -17,17 +22,22 @@ footer
 
   .adresses
     p
-      font-size: 1.2em
-      margin-bottom: 1em
+      font-size: 0.75em
+      margin-bottom: 0.675em
+
+    .text
+      font-size: 0.625em
+      @include var.screen (desktop)
+        font-size: 0.75em
 
     ul
       li
-        margin-bottom: 1em
+        margin-bottom: 0.675em
 
         .icon
-          width: 1.2em
-          height: 1.2em
-          margin-right: 1em
+          width: 0.75em
+          height: 0.75em
+          margin-right: 0.675em
           flex-shrink: 0
           background: url('/assets/icons/address.svg') center no-repeat
           background-size: contain
@@ -36,6 +46,10 @@ footer
     display: flex
     justify-content: space-between
     width: 100%
+    @include var.screen (desktop)
+      flex-direction: column
+      align-items: end
+      width: max-content
 
     .social
       display: flex
@@ -44,13 +58,21 @@ footer
 
       a
         display: block
-        width: 4em
-        height: 4em
-        background-color: red
+        width: 2.5em
+        height: 2.5em
+        margin-right: 0.625em
+
+        &#vk
+          background-image: url('/assets/icons/vk.svg')
+
+        &#instagram
+          background-image: url('/assets/icons/instagram.svg')
 
     .info
       display: flex
       flex-direction: column
+      text-align: end
 
       span
-        font-size: 1.4em
+        font-size: 0.875em
+        line-height: 2

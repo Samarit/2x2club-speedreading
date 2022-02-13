@@ -9,23 +9,29 @@
   color: white
   background: no-repeat
   background-size: cover
+  background-position-x: calc( -360px + 40vw )
   background-image: url(/assets/images/bg_main.jpg)
+  min-height: 80vh
   @include var.screen (desktop)
     padding: 4.5em
-    background-size: 100%
     background-position: center
 
   .wrapper
     display: flex
     flex-direction: column
-    max-width: 924px
+    max-width: 650px
 
     h1
       font-size: 1.875em
+      margin-bottom: 1em
+      @include var.screen (desktop)
+        font-size: 3.125em
 
     h2
       color: var.$extralight-fiolet
       margin-bottom: 3.75em
+      @include var.screen (desktop)
+        font-size: 1.875em
 
     .btn
       width: 290px
@@ -36,3 +42,4 @@
         width: 480px
         height: 55px
         font-size: 21px
+        border-radius: 27.5px

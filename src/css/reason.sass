@@ -2,6 +2,8 @@
 
 #reason
   background-color: var.$fiolet
+  padding-right: 0
+  padding-left: 0
 
   .section-header
     color: white
@@ -9,17 +11,30 @@
   p
     font-size: 1.166em
     margin-bottom: 4px
+    @include var.screen ($breakpoint: desktop)
+      font-size: 1.3em
 
   ul
+    @include var.screen (desktop)
+      flex-direction: column
+      flex-wrap: nowrap
+
     li
+      max-width: none
       background-color: white
       padding: 1.4em 1em 1em 1em
       border-radius: 20px 7px 20px 20px
+      @include var.screen (desktop)
+        padding: 2em 3em
 
       .icon
         width: 2em
         height: 2em
         background-size: contain
+        @include var.screen (desktop)
+          width: 3.5em
+          height: 3.5em
+          margin-right: 2em
 
       &:nth-child(1) .icon
         background-image: url('/assets/icons/books.svg')

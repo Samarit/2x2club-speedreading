@@ -12,6 +12,7 @@
 
     li:nth-child(3) .icon
       background-color: var.$light-fiolet
+      background-image: url(/assets/icons/faces/puzzle.svg)
 
     li:nth-child(4) .icon
       background-color: var.$light-orange
@@ -23,18 +24,44 @@
 
   .targets
     background-color: var.$pink
+    @include var.screen (desktop)
+      background-image: url('/assets/images/speedreading_bg.jpg')
+      background-position: center
+      background-size: cover
+      box-shadow: inset 0 0 0 1000px rgba(106, 79, 155, 0.66)
+
+    ul
+      @include var.screen (desktop)
+        max-width: 400px
 
   .steps
-    .icon
-      font-size: 1.25em
-      width: 1.875rem
-      height: 1.875rem
-      line-height: 1.875rem
-      color: white
-      border-radius: 7px 3px 7px 7px
-      text-align: center
-      margin-right: 0.65em
-      flex-shrink: 0
+    ul
+      margin: 0 auto
+      @include var.screen (desktop)
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        flex-wrap: wrap
+
+      li
+        @include var.screen (desktop)
+          width: 245px
+
+        .icon
+          font-size: 1.25em
+          width: 1.875em
+          height: 1.875em
+          line-height: 1.875em
+          color: white
+          border-radius: 7px 3px 7px 7px
+          text-align: center
+          margin-right: 0.65em
+          flex-shrink: 0
+          @include var.screen (desktop)
+            font-size: 2em
+            width: 1.5625em
+            height: 1.5625em
+            line-height: 1.5625em
 
     li:nth-child(1) .icon
       background-color: var.$fiolet
@@ -56,28 +83,44 @@
 
     li:not(:last-child)
       margin-bottom: 2em
+      @include var.screen (desktop)
+        margin-bottom: 0
+
+    li:nth-child(n+4)
+      @include var.screen (desktop)
+        margin-top: 3.75em
 
   .result
-    li
-      &:nth-child(1)
-        background-color: var.$mid-blue
+    ul
+      @include var.screen (desktop)
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
 
-        .icon
-          background-image: url('/assets/icons/brain.svg')
+      li
+        @include var.screen (desktop)
+          width: 390px
 
-      &:nth-child(2)
-        background-color: var.$mid-fiolet
+        &:nth-child(1)
+          background-color: var.$mid-blue
 
-        .icon
-          background-image: url('/assets/icons/talks_colored.svg')
+          .icon
+            background-image: url('/assets/icons/brain.svg')
 
-      &:nth-child(3)
-        background-color: var.$mid-yellow
-        .icon
-          background-image: url('/assets/icons/hero.svg')
+        &:nth-child(2)
+          background-color: var.$mid-fiolet
 
-      &:nth-child(4)
-        background-color: var.$mid-orange
+          .icon
+            background-image: url('/assets/icons/talks_colored.svg')
 
-        .icon
-          background-image: url('/assets/icons/books_colored.svg')
+        &:nth-child(3)
+          background-color: var.$mid-yellow
+
+          .icon
+            background-image: url('/assets/icons/hero.svg')
+
+        &:nth-child(4)
+          background-color: var.$mid-orange
+
+          .icon
+            background-image: url('/assets/icons/books_colored.svg')

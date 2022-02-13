@@ -4,6 +4,29 @@
   .result
     color: black
 
+    ul
+      @include var.screen (desktop)
+        flex-direction: row
+
+      li
+        @include var.screen (desktop)
+          flex-direction: column
+          align-items: start
+          width: 9.375em
+          height: 12.5em
+          padding: 0.9em
+
+        .icon
+          @include var.screen (desktop)
+            width: 2.5em
+            height: 2.5em
+            margin-bottom: 0.5em
+
+        .text
+          @include var.screen (desktop)
+            font-size: 0.875em
+            line-height: 1
+
     li:nth-child(1)
       background-color: var.$mid-yellow
       .icon
