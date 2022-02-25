@@ -15,7 +15,6 @@ btn.addEventListener('click', () => {
 
 const inputName = document.getElementById('inputName')
 const inputEmail = document.getElementById('inputEmail')
-const inputPhone = document.getElementById('inputPhone')
 const inputs = document.querySelectorAll('input[type="phone"]')
 
 
@@ -23,7 +22,11 @@ let maskPhoneOptions = {
   mask: '+{7}(000)000-00-00',
   lazy: false
 }
-let maskPhone = IMask(inputPhone, maskPhoneOptions)
+
+inputs.forEach((input) => {
+  let maskPhone = IMask(input, maskPhoneOptions)
+})
+
 
 
 // Teachers and reviews slider initialization

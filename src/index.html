@@ -314,31 +314,38 @@
               </div>
         </div>
   
-        <div class="input-area">
-            <div class="input-group">
-              <input 
-                type="email"
-                name="email"
-                id="inputEmail" 
-                placeholder="Email" 
-                required>
-            </div>
-            <div class="input-group">
-              <input 
-                type="text"
-                name="name"
-                id="inputName"
-                placeholder="Имя"
-                required>
-            </div>
-            <div class="input-group">
-              <input 
-                type="phone" 
-                name="phone" 
-                id="inputPhone"
-                placeholder="Телефон"
-                required>
-            </div>
+        <div class="input-area email">
+          <div class="input-group">
+
+            <input 
+              type="email"
+              name="email"
+              placeholder="Email" 
+              required>
+
+            <div class="input-error">Некорректные данные</div>
+          </div>
+
+          <div class="input-group name">
+            <input 
+              type="text"
+              name="name"
+              placeholder="Имя"
+              required>
+
+            <div class="input-error">Некорректные данные</div>
+          </div>
+
+          <div class="input-group phone">
+            <input 
+              type="phone" 
+              name="phone" 
+              placeholder="Телефон"
+              required>
+
+            <div class="input-error">Некорректные данные</div>
+          </div>
+
             <button type="submit" class="btn btn-primary">Записаться</button>
         </div>
       </form>
@@ -522,31 +529,38 @@
           чтобы мы могли связаться с Вами.
         </div>
   
-        <div class="input-area">
-            <div class="input-group">
-              <input 
-                type="email"
-                name="email"
-                id="inputEmail" 
-                placeholder="Email" 
-                required>
-            </div>
-            <div class="input-group">
-              <input 
-                type="text"
-                name="name"
-                id="inputName"
-                placeholder="Имя"
-                required>
-            </div>
-            <div class="input-group">
-              <input 
-                type="phone" 
-                name="phone" 
-                id="inputPhone"
-                placeholder="Телефон"
-                required>
-            </div>
+        <div class="input-area email">
+          <div class="input-group">
+
+            <input 
+              type="email"
+              name="email"
+              placeholder="Email" 
+              required>
+
+            <div class="input-error">Некорректные данные</div>
+          </div>
+
+          <div class="input-group name">
+            <input 
+              type="text"
+              name="name"
+              placeholder="Имя"
+              required>
+
+            <div class="input-error">Некорректные данные</div>
+          </div>
+
+          <div class="input-group phone">
+            <input 
+              type="phone" 
+              name="phone" 
+              placeholder="Телефон"
+              required>
+
+            <div class="input-error">Некорректные данные</div>
+          </div>
+
             <button type="submit" class="btn btn-primary">Записаться</button>
         </div>
       </form>
@@ -756,7 +770,7 @@
   </footer>
 
   <div class="modal" id="modal">
-    <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-overlay" data-close="true" id="modal-overlay">
       <div class="modal-container">
         
         <div class="form-container form-course" id="modalCourse">
@@ -801,31 +815,38 @@
                   </div>
             </div>
       
-            <div class="input-area">
+            <div class="input-area email">
                 <div class="input-group">
+
                   <input 
                     type="email"
                     name="email"
-                    id="inputEmail" 
                     placeholder="Email" 
                     required>
+
+                  <div class="input-error">Некорректные данные</div>
                 </div>
-                <div class="input-group">
+
+                <div class="input-group name">
                   <input 
                     type="text"
                     name="name"
-                    id="inputName"
                     placeholder="Имя"
                     required>
+
+                  <div class="input-error">Некорректные данные</div>
                 </div>
-                <div class="input-group">
+
+                <div class="input-group phone">
                   <input 
                     type="phone" 
                     name="phone" 
-                    id="inputPhone"
                     placeholder="Телефон"
                     required>
+
+                  <div class="input-error">Некорректные данные</div>
                 </div>
+
                 <button type="submit" class="btn btn-primary">Записаться</button>
             </div>
           </form>
@@ -847,31 +868,35 @@
             class="needs-validation"
             id="formSignup">
       
-            <div class="input-area">
+            <div class="input-area email">
                 <div class="input-group">
                   <input 
                     type="email"
                     name="email"
-                    id="inputEmail" 
                     placeholder="Email" 
                     required>
+
+                  <div class="input-error">Некорректные данные</div>
                 </div>
-                <div class="input-group">
+
+                <div class="input-group name">
                   <input 
                     type="text"
                     name="name"
-                    id="inputName"
                     placeholder="Имя"
                     required>
+                  <div class="input-error">Некорректные данные</div>
                 </div>
-                <div class="input-group">
+
+                <div class="input-group phone">
                   <input 
                     type="phone" 
-                    name="phone" 
-                    id="inputPhone"
+                    name="phone"
                     placeholder="Телефон"
                     required>
+                  <div class="input-error">Некорректные данные</div>
                 </div>
+                
                 <button type="submit" class="btn btn-primary">Записаться</button>
             </div>
           </form>
@@ -880,9 +905,19 @@
           </div>
         </div>
 
-        <div class="form-container form-result" id="modalSuccess">SUCC ASS</div>
+        <div class="form-container form-result" id="modalSuccess">
+          <div class="form-result-icon"></div>
+          <div class="form-result-header">Спасибо за заявку!</div>
+          <div class="form-result-body">Наш менеджер свяжется с Вами в ближайшее время</div>
+        </div>
 
-        <div class="form-container form-result" id="modalError">ERR</div>
+        <div class="form-container form-result" id="modalError">
+          <div class="form-result-icon"></div>
+          <div class="form-result-header">Ой!</div>
+          <div class="form-result-body">Андрей долбоеб(</div>
+        </div>
+
+        <div class="form-button-close" data-close="'true">X</div>
 
       </div>
     </div>

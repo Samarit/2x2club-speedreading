@@ -25,6 +25,6 @@ app.post('/api/sendmail', upload.none(), async (req, res) => {
   console.log(req.method, req.body, req.headers['content-type'])
   console.log(`status: ${status}`)
 
-  res.status(404).send(status)
+  res.send(status)
 
 })

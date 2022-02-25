@@ -3,7 +3,7 @@ const $course = document.getElementById('modalCourse')
 const $lesson = document.getElementById('modalLesson')
 const $success = document.getElementById('modalSuccess')
 const $error = document.getElementById('modalError')
-const $overlay = document.getElementById('modal-overlay')
+const modalCloseElems = document.querySelectorAll('[data-close]')
 
 
 let modal = {
@@ -18,11 +18,15 @@ let modal = {
     // If modal has no open class, add one
     !$modal.classList.contains('opened') && $modal.classList.add('opened')
     
-    $course.classList.remove('active')
-    $lesson.classList.remove('active')
+    _removeActive()
     
     //If success => success modal shows, else error modal shows
     status == 200 ? $success.classList.add('active') : $error.classList.add('active')
+
+    setTimeout(() => {
+      _removeActive()
+      $modal.classList.remove('opened')
+    }, 3000)
   },
   
   close: (e) => {
@@ -32,8 +36,17 @@ let modal = {
   
 }
 
-$overlay.addEventListener('click', (e) => {
-  modal.close(e)
+modalCloseElems.forEach( (elem, i) => {
+  elem.addEventListener('click', (e) => {
+    modal.close(e)
+  })
 })
+
+function _removeActive() {
+  $course.classList.remove('active')
+  $lesson.classList.remove('active')
+  $success.classList.remove('active')
+  $error.classList.remove('active')
+}
 
 export default modal
