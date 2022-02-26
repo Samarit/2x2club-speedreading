@@ -19,13 +19,42 @@
     background-color: rgba(0, 0, 0, 0.5)
 
     .modal-container
-      background-color: var.$fiolet
+      background-color: var.$light-fiolet
+      margin: 0 0.5rem
+      position: relative
+      border-radius: 20px
+
+      .form-button-close
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        top: 0
+        right: 0
+        width: 1.5rem
+        height: 1.5rem
+        margin: 0.8rem
+        font-size: 1.5rem
+        font-weight: bold
+        border-radius: 50%
+        background-color: white
+        cursor: pointer
+        @include var.screen (desktop)
+          width: 2rem
+          height: 2rem
+          margin: 1rem
+          font-size: 2rem
 
       .form-container
         display: none
+        color: black
 
         &.active
           display: block
+
+        form
+          .radio
+            color: black
 
 .modal.opened
   display: block
