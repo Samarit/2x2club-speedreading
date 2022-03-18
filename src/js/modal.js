@@ -31,6 +31,7 @@ let modal = {
   
   close: (e) => {
     if (e.target !== e.currentTarget) return
+    _removeActive()
     $modal.classList.remove('opened')
   }
   

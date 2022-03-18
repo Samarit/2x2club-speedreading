@@ -1,6 +1,6 @@
 const navbar = document.getElementById('navbar')
 const navbarToggler = document.getElementById('navbar-toggler')
-const ANIMATION_SPEED = 300
+const links = navbar.querySelectorAll('.navbar-link')
 
 function openMobileNavbar() {
   navbar.classList.add('opened')
@@ -12,4 +12,10 @@ function closeMobileNavbar() {
 
 navbarToggler.addEventListener('click', () => {
   navbar.classList.contains('opened') ? closeMobileNavbar() : openMobileNavbar()
+})
+
+links.forEach((link) => {
+  link.addEventListener('click', () => {
+    closeMobileNavbar()
+  })
 })

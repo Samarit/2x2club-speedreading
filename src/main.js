@@ -7,11 +7,20 @@ import './js/formSubmit'
 
 import modal from './js/modal'
 
-const btn = document.querySelector('.btn')
-btn.addEventListener('click', () => {
-  modal.open('course')
+const buttonsModalLesson = document.querySelectorAll('*[data-modal-lesson')
+const buttonsModalCourse = document.querySelectorAll('*[data-modal-course')
+
+buttonsModalCourse.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    modal.open('course')
+  })
 })
 
+buttonsModalLesson.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    modal.open('lesson')
+  })
+})
 
 const inputName = document.getElementById('inputName')
 const inputEmail = document.getElementById('inputEmail')
