@@ -1,19 +1,17 @@
-import formValidate from "./formValidate";
-import modal from "./modal";
+import modal from "./modal"
 
-export default async function formSend(url, data) {
+export default async function formSend(url, form) {
+
+  let data = new FormData(form)
+
+  form.classList.add('loading')
 
   let fetched = await fetch(url, {
     method: 'POST',
     body: data
   })
 
-  let jsoned = await fetched.json()
-
-
+  form.classList.remove('loading')
 
   modal.showResult(fetched.status)
-
-  console.log(fetched.status)
-  console.log(jsoned)
 }
