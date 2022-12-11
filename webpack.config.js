@@ -1,12 +1,14 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/main.js', 
   output: {
-    filename: 'bundle.[chunkhash].js',
+    filename: 'bundle.[contenthash].js',
     path: path.resolve(__dirname, 'public'),
+    assetModuleFilename: 'assets/[contenthash][ext][query]',
+    clean: true
   },
   devServer: {
     host: '0.0.0.0',
@@ -18,9 +20,10 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      hash: true
     }),
-    new CleanWebpackPlugin()
+    new WebpackManifestPlugin(),
   ],
   module: {
     rules: [
@@ -55,5 +58,8 @@ module.exports = {
         use: 'html-loader'
       }
     ]
+  },
+  optimization: {
+    realContentHash: false
   }
 }
